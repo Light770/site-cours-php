@@ -1,7 +1,4 @@
 <?php 
-
-echo "You're logged in";
-
 if(isset($_GET['page'])){
     $page = $_GET['page'];
 } else {
@@ -17,8 +14,8 @@ switch ($page) {
     case 'home':
         include './src/includes/accueil.inc.php';
         break;
-    case 'home':
-        include './src/includes/accueil.inc.php';
+    case 'contact':
+        include './src/includes/contact.inc.php';
         break;
     case 'profile':
         include './src/includes/profile.inc.php';

@@ -19,6 +19,7 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
+  <link rel="stylesheet" href="./assets/styles/styleCV.css">
   <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
@@ -56,6 +57,10 @@
                             "name" => "Test",
                             "href" => "test"
                         ],
+                        [
+                            "name" => "Me contacter",
+                            "href" => "contact"
+                        ],
                     ];
 
                     function retournerMenuButton($params, $password) 
@@ -70,7 +75,7 @@
                     }
 
                     foreach ($menu_side as $key => $value) {
-                        echo retournerMenuButton($value,'untrukopif' );
+                        echo retournerMenuButton($value,$config['passwordHttp']);
                     }
 
                 ?>
