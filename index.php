@@ -50,14 +50,6 @@
                             "href" => "home"
                         ],
                         [
-                            "name" => "Profile",
-                            "href" => "profile"
-                        ],
-                        [
-                            "name" => "Test",
-                            "href" => "test"
-                        ],
-                        [
                             "name" => "Me contacter",
                             "href" => "contact"
                         ],
@@ -84,16 +76,18 @@
         </nav>
         <div class="content">
         <?php 
-            if($_GET['password'] == $config['passwordHttp']) {
+            if(isset($_GET['password'])){
+                $password = $_GET['password'];
+            } else {
+                $password = 'badpass';
+            }
+            if($password == $config['passwordHttp']) {
                 include './src/includes/login.inc.php';
             } else {
                 include './src/includes/oops.inc.php';
             }
         ?> 
-        
-        
-        
-        <!--form id="formulaire" class="form spacer-container">
+        <!--form id="formulaire" class="form spacer-container" action="#" method="POST">
                 <div>
                     <label for="date">Date :</label></br>
                     <input type="date" name="date" id="date" class="form-control"></br>
@@ -101,33 +95,10 @@
                     <input type="text" name="titre" id="titre" class="form-control"></br>
                     <label for="description">Description :</label></br>
                     <textarea name="description" id="description" class="form-control"></textarea>
-                </div>
-            </form-->
+                </div-->
+        </form>
         </div>
     </div>
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
     <script src="js/scripts.js"></script> 
 </body>
 </html>
