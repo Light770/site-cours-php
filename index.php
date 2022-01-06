@@ -84,18 +84,12 @@
         </nav>
         <div class="content">
         <?php 
-
-            //http://127.0.0.1/site-cours-php/index.php?variable=10
-        
-        
             if($_GET['password'] == $config['passwordHttp']) {
                 include './src/includes/login.inc.php';
             } else {
                 include './src/includes/oops.inc.php';
             }
-
-
-    ?> 
+        ?> 
         
         
         
