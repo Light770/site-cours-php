@@ -19,23 +19,19 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <link rel="stylesheet" href="./assets/styles/styleCV.css">
   <link rel="stylesheet" href="./assets/styles/style.css">
 </head>
 
 <body>
     <?php 
         include './src/devtool/debug.devtool.php';
-
-        $config =[
-            'passwordHttp' => 'untrukopif',
-        ];
-
-        //include './config/main.config.php';
+        include './config/main.config.php';
+        include './src/core.php';
+        include './src/databse.php';
     ?>
     <nav class="nav-bar">
         <ul>
-            <li><a href=""><div class="list-element">Mon super site</div></a>
+            <li><a href="#"><div class="list-element">Mon super site</div></a>
             </li>
         </ul>
     </nav>
@@ -53,18 +49,16 @@
                             "name" => "Me contacter",
                             "href" => "contact"
                         ],
+                        [
+                            "name" => "Me Féliciter d'avoir ajouter une page",
+                            "href" => "pshartek"
+                        ],
+                        [
+                            "name" => "Ajouter une Experience",
+                            "href" => "ajouterExperiences"
+                        ],
                     ];
 
-                    function retournerMenuButton($params, $password) 
-                    {
-                        return '<li>
-                                    <a href="?password=' . $password . '&page='. $params['href'] .'">
-                                        <div class="list-element">
-                                            ' . $params['name'] . ' 
-                                        </div>
-                                    </a>
-                                </li>';
-                    }
 
                     foreach ($menu_side as $key => $value) {
                         echo retournerMenuButton($value,$config['passwordHttp']);
@@ -87,16 +81,7 @@
                 include './src/includes/oops.inc.php';
             }
         ?> 
-        <!--form id="formulaire" class="form spacer-container" action="#" method="POST">
-                <div>
-                    <label for="date">Date :</label></br>
-                    <input type="date" name="date" id="date" class="form-control"></br>
-                    <label for="titre">Titre :</label></br>
-                    <input type="text" name="titre" id="titre" class="form-control"></br>
-                    <label for="description">Description :</label></br>
-                    <textarea name="description" id="description" class="form-control"></textarea>
-                </div-->
-        </form>
+        
         </div>
     </div>
     <script src="js/scripts.js"></script> 

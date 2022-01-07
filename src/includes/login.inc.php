@@ -16,8 +16,13 @@ switch ($page) {
     case 'contact':
         include './src/includes/contact.inc.php';
         break;
+    case 'pshartek':
+        include './src/includes/merci.inc.php';
+        break;
+    case 'ajouterExperiences':
+        include './src/includes/ajouterExperiences.inc.php';
+        break;
     default:
         include './src/includes/accueil.inc.php';
         break;
 }
-
